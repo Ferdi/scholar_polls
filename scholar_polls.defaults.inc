@@ -63,3 +63,75 @@ function _scholar_polls_menu_default_items() {
 
   return $items;
 }
+
+/**
+ * Helper to implementation of hook_user_default_permissions().
+ */
+function _scholar_polls_user_default_permissions() {
+  $permissions = array();
+
+  // Exported permission: create poll content
+  $permissions[] = array(
+    'name' => 'create poll content',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: delete own poll content
+  $permissions[] = array(
+    'name' => 'delete own poll content',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: edit own poll content
+  $permissions[] = array(
+    'name' => 'edit own poll content',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: override poll promote to front page option
+  $permissions[] = array(
+    'name' => 'override poll promote to front page option',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: override poll published option
+  $permissions[] = array(
+    'name' => 'override poll published option',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: override poll revision option
+  $permissions[] = array(
+    'name' => 'override poll revision option',
+    'roles' => array(),
+  );
+
+  // Exported permission: override poll sticky option
+  $permissions[] = array(
+    'name' => 'override poll sticky option',
+    'roles' => array(
+      '0' => 'scholar admin',
+    ),
+  );
+
+  // Exported permission: vote on polls
+  $permissions[] = array(
+    'name' => 'vote on polls',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
+  return $permissions;
+}
